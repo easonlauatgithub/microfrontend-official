@@ -1,0 +1,171 @@
+--------------------------------------------------------
+MICRON FRONTEND
+--------------------------------------------------------
+Portal 
+	>Portal link
+	>App 
+		>>Project URL
+		>>user/session
+		>>maintenance
+on window not linux
+--------------------------------------------------------
+tutorial
+--------------------------------------------------------
+https://morioh.com/p/b62bf13246cc
+
+--------------------------------------------------------
+single-spa
+--------------------------------------------------------
+https://single-spa.js.org/docs/getting-started-overview/
+npx create-single-spa --moduleType root-config
+npx create-single-spa --moduleType app-parcel
+
+--------------------------------------------------------
+single-spa-vue
+--------------------------------------------------------
+single-spa-vue/vue.config.js
+	// change port
+  devServer: { port: 9002 },
+  //fix app-errors.js:11 Uncaught TypeError: application 'XXX' died in status LOADING_SOURCE_CODE: Cannot read property 'meta' of undefined
+  configureWebpack: {
+    output: {
+      libraryTarget: 'system',
+    },
+  },	
+
+--------------------------------------------------------
+single-spa-angular
+--------------------------------------------------------
+single-spa-root/index.ejs
+	//uncomment 
+	<script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script>
+	
+	
+	
+	
+
+--------------------------------------------------------
+nginx
+--------------------------------------------------------
+cd ~/Desktop/nginx-1.20.2
+./nginx &
+./nginx -s quit
+cd ~/Desktop/nginx-1.20.2/html/index.html
+
+--------------------------------------------------------
+tomcat
+--------------------------------------------------------
+// change port
+D:\Users\Eason YS Lau\Desktop\server\apache-tomcat-9.0.60a\conf\server.xml
+// start
+D:\Users\Eason YS Lau\Desktop\server\apache-tomcat-9.0.60a\bin\startup.bat
+// index
+D:\Users\Eason YS Lau\Desktop\server\apache-tomcat-9.0.60a\webapps\ROOT
+// fix cors issue
+D:\Users\Eason YS Lau\Desktop\server\apache-tomcat-9.0.60a\conf\web.xml
+D:\Users\Eason YS Lau\Desktop\server\apache-tomcat-9.0.60a\webapps\ROOT\WEB-INF\web.xml
+<!-- easontesting - fix cors issue -->
+	<filter>
+	  <filter-name>CorsFilter</filter-name>
+	  <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+	  <init-param>
+		<param-name>cors.allowed.origins</param-name>
+		<param-value>http://dt-poc-159:9000</param-value>
+	  </init-param>
+	  <init-param>
+		<param-name>cors.allowed.methods</param-name>
+		<param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
+	  </init-param>
+	  <init-param>
+		<param-name>cors.allowed.headers</param-name>
+		<param-value>Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers</param-value>
+	  </init-param>
+	  <init-param>
+		<param-name>cors.exposed.headers</param-name>
+		<param-value>Access-Control-Allow-Origin,Access-Control-Allow-Credentials</param-value>
+	  </init-param>
+	  <init-param>
+		<param-name>cors.support.credentials</param-name>
+		<param-value>true</param-value>
+	  </init-param>
+	  <init-param>
+		<param-name>cors.preflight.maxage</param-name>
+		<param-value>10</param-value>
+	  </init-param>
+	</filter>
+	<filter-mapping>
+	  <filter-name>CorsFilter</filter-name>
+	  <url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+--------------------------------------------------------
+wildfly
+--------------------------------------------------------
+// config
+D:\Users\Eason YS Lau\Desktop\server\wildfly-19.1.0.Finala\standalone\configuration\standalone.xml
+// start
+D:\Users\Eason YS Lau\Desktop\server\wildfly-19.1.0.Finala\bin\standalone.bat
+// index
+D:\Users\Eason YS Lau\Desktop\server\wildfly-19.1.0.Finala\welcome-content
+// fix cors issue
+D:\Users\Eason YS Lau\Desktop\server\wildfly-19.1.0.Finala\standalone\configuration\standalone.xml
+
+--------------------------------------------------------
+git
+--------------------------------------------------------
+git config --global user.email "easonlau@example.com"
+git config --global user.name "easonlau"
+uid: easonlauatgithub
+token: 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
+
+--------------------------------------------------------
+node
+--------------------------------------------------------
+node -v
+node index.js
+pm2 start index.js
+forever start index.js
+forever -w start index.js
+
+--------------------------------------------------------
+npx
+--------------------------------------------------------
+npx -v
+
+npx create-react-app react-app-1
+package.json	"homepage":"./"
+
+npx @vue/cli create vue-app-3
+vue.config.js	publicPath: './'
+
+npx -p @angular/cli ng new angular-app-2
+package.json	"build": "ng build --base-href \"./\"",
+
+--------------------------------------------------------
+npm
+--------------------------------------------------------
+npm config list
+npm config set proxy http://judpocproxy.poc.et:8080
+npm config set https-proxy http://judpocproxy.poc.et:8080
+npm config get proxy
+npm config get https_proxy
+npm config get registry
+npm config get strict-ssl
+npm install
+npm install --legacy-peer-deps
+npm audit
+npm audit fix
+npm audit fix --force
+npm start
+
+--------------------------------------------------------
+nvm
+--------------------------------------------------------
+nvm proxy judpocproxy.poc.et:8080
+D:\Users\Eason YS Lau\AppData\Roaming\nvm\settings.txt
+nvm list available
+nvm use version
+nvm install version
+D:\Users\Eason YS Lau\AppData\Roaming\nvm\v17.7.1
+D:\Users\Eason YS Lau\AppData\Roaming\nvm\v16.14.1
